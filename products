@@ -1,25 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-	<ModulePrefs title="RVTR Closures">
+	<ModulePrefs title="ERA-CLIM2 Products">
 		<Require feature="dynamic-height"/>
 	</ModulePrefs>
 
     <Content type="html">
 		<![CDATA[
 		<div id="contentDiv" style="text-align:center; color:#444; line-height:1.4; font-size:10pt; font-family:&quot;Verdana&quot;,&quot;Helvetica&quot;,&quot;Arial&quot;,sans-serif !important;"></div>
+
 		<script type="text/javascript">
+
 			function getHtml() {    
 				var parameters = {};  
 				parameters[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.TEXT;  
 				var url = "https://script.google.com/macros/s/AKfycbzrc4Fn8ETRHEmheY-1PAU64jPhPHoAR6ilc0HAbFsnJwErRvI/exec";  
 				gadgets.io.makeRequest(url, processResponse, parameters);
 			};
+
 			function processResponse(response) {  
 				document.getElementById('contentDiv').innerHTML = response.text;
 		   		gadgets.window.adjustHeight();
 			};
+
 		  gadgets.util.registerOnLoadHandler(getHtml);
+
 		</script>
+
 		]]>
 	</Content>
 </Module>
